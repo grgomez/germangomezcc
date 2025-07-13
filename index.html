@@ -5,9 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Germán Gómez Urbina, P.Eng., PMP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .sidebar {
+            position: sticky;
+            top: 50%;
+            transform: translateY(-50%);
+            height: fit-content;
+            padding: 1.5rem;
+        }
+        .sidebar .nav-link {
+            color: #6c757d;
+            padding: 0.5rem 0;
+            border: none;
+            background: none;
+            text-decoration: none;
+        }
+        .sidebar .nav-link:hover {
+            color: #0d6efd;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container my-5">
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-lg-3">
+                <nav class="sidebar">
+                    <h6 class="sidebar-heading mb-3">Navigation</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#summary">Summary</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">Technical Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#certifications">Professional Certifications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#experience">Employment History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Notable Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#education">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#open-source">Open Source Projects</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-9">
         <header class="text-center mb-5">
             <h1>Germán Gómez, P.Eng., PMP</h1>
             <img src="me.jpg" class="img-fluid rounded-circle mb-3" alt="Germán R. Gómez Urbina" style="width: 150px; height: 150px; object-fit: cover;">
@@ -230,6 +288,8 @@
         <footer class="text-center mt-5">
             <p>&copy; 2025 Germán Gómez</p>
         </footer>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
