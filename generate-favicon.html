@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        canvas { border: 1px solid #ccc; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h3>Favicon Generator</h3>
+    <canvas id="canvas16" width="16" height="16"></canvas>
+    <canvas id="canvas32" width="32" height="32"></canvas>
+    
+    <script>
+        function drawHexagon(ctx, size) {
+            const centerX = size / 2;
+            const centerY = size / 2;
+            const radius = size * 0.4;
+            
+            ctx.fillStyle = '#0d6efd';
+            ctx.beginPath();
+            
+            for (let i = 0; i < 6; i++) {
+                const angle = (i * Math.PI) / 3;
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+                
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            
+            ctx.closePath();
+            ctx.fill();
+        }
+        
+        // Draw 16x16 favicon
+        const canvas16 = document.getElementById('canvas16');
+        const ctx16 = canvas16.getContext('2d');
+        drawHexagon(ctx16, 16);
+        
+        // Draw 32x32 favicon
+        const canvas32 = document.getElementById('canvas32');
+        const ctx32 = canvas32.getContext('2d');
+        drawHexagon(ctx32, 32);
+        
+        // Add download functionality
+        setTimeout(() => {
+            // Download 16x16 PNG
+            const link16 = document.createElement('a');
+            link16.download = 'favicon-16x16.png';
+            link16.href = canvas16.toDataURL();
+            document.body.appendChild(link16);
+            
+            // Download 32x32 PNG  
+            const link32 = document.createElement('a');
+            link32.download = 'favicon-32x32.png';
+            link32.href = canvas32.toDataURL();
+            document.body.appendChild(link32);
+            
+            console.log('Canvas data URLs ready - you can right-click and save');
+        }, 100);
+    </script>
+</body>
+</html>
