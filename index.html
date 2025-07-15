@@ -83,6 +83,32 @@
             opacity: 1;
             visibility: visible;
         }
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+        }
+        .language-switcher .btn-group {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .language-switcher .btn {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+            border: 1px solid #dee2e6;
+            background-color: white;
+            color: #6c757d;
+            transition: all 0.2s ease;
+        }
+        .language-switcher .btn:hover {
+            background-color: #f8f9fa;
+            color: #0d6efd;
+        }
+        .language-switcher .btn.active {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
         @media (max-width: 768px) {
             .sidebar {
                 display: none;
@@ -90,36 +116,53 @@
             .back-to-top {
                 display: block;
             }
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            .language-switcher .btn {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container-fluid my-5">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <div class="btn-group" role="group" aria-label="Language selection">
+                <button type="button" class="btn btn-sm active" data-lang="en" title="English">EN</button>
+                <button type="button" class="btn btn-sm" data-lang="fr" title="Français">FR</button>
+                <button type="button" class="btn btn-sm" data-lang="es" title="Español">ES</button>
+            </div>
+        </div>
+        
         <div class="row">
             <div class="col-lg-3">
                 <nav class="sidebar">
                     <h6 class="sidebar-heading mb-3">Navigation</h6>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="#summary">Summary</a>
+                            <a class="nav-link" href="#summary" data-translate="nav-summary">Summary</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#skills">Technical Skills</a>
+                            <a class="nav-link" href="#skills" data-translate="nav-skills">Technical Skills</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#certifications">Professional Certifications</a>
+                            <a class="nav-link" href="#certifications" data-translate="nav-certifications">Professional Certifications</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#experience">Employment History</a>
+                            <a class="nav-link" href="#experience" data-translate="nav-experience">Employment History</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#projects">Notable Projects</a>
+                            <a class="nav-link" href="#projects" data-translate="nav-projects">Notable Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#education">Education</a>
+                            <a class="nav-link" href="#education" data-translate="nav-education">Education</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#open-source">Open Source Projects</a>
+                            <a class="nav-link" href="#open-source" data-translate="nav-open-source">Open Source Projects</a>
                         </li>
                     </ul>
                 </nav>
@@ -128,7 +171,7 @@
         <header class="text-center mb-5">
             <h1>Germán Gómez, P.Eng., PMP</h1>
             <img src="me.jpg" class="img-fluid rounded-circle mb-3" alt="Germán R. Gómez Urbina" style="width: 150px; height: 150px; object-fit: cover;">
-            <p class="lead">Systems Integration Engineer</p>
+            <p class="lead" data-translate="job-title">Systems Integration Engineer</p>
             <p>
                 <a href="mailto:german.gomezu@outlook.com">german.gomezu@outlook.com</a> |
                 Calgary, Alberta, Canada
@@ -141,28 +184,28 @@
 
         <main>
             <section id="summary" class="mb-5">
-                <h2>Summary</h2>
-                <p>Systems Integration Engineer with 9+ years developing enterprise-scale distributed systems for critical infrastructure. Proven track record leading cross-functional teams of 15+ engineers in complex system migrations, custom application development, database architecture, and real-time processing systems. Expert in C#, Python, and modern DevOps practices.</p>
+                <h2 data-translate="summary-heading">Summary</h2>
+                <p data-translate="summary-text">Systems Integration Engineer with 9+ years developing enterprise-scale distributed systems for critical infrastructure. Proven track record leading cross-functional teams of 15+ engineers in complex system migrations, custom application development, database architecture, and real-time processing systems. Expert in C#, Python, and modern DevOps practices.</p>
             </section>
 
             <section id="skills" class="mb-5">
-                <h2>Technical Skills</h2>
+                <h2 data-translate="skills-heading">Technical Skills</h2>
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Leadership & Management</h5>
+                        <h5 class="card-title" data-translate="leadership-heading">Leadership & Management</h5>
                         <ul>
-                            <li>Program Management - Leading multi-million dollar SCADA modernization programs</li>
-                            <li>Technical Leadership - System architecture and integration expertise for critical infrastructure</li>
-                            <li>Cross-functional Team Management - Overseeing 15+ engineers across multiple workstreams (HMI, Custom Applications, Liquids Management Systems)</li>
-                            <li>Stakeholder Management - Interfacing with major pipeline company executives and decision-makers</li>
-                            <li>Resource Management - Team allocation, scheduling, and capacity planning</li>
-                            <li>Change Management - Change-order development and scope management</li>
-                            <li>Conflict Resolution - Technical and interpersonal dispute resolution</li>
-                            <li>Strategic Decision Making - Guiding technical architecture and implementation decisions</li>
-                            <li>Client Advisory - Providing expert consultation on complex system integration challenges</li>
-                            <li>Project Estimation - Scope analysis and effort estimation for enterprise systems</li>
-                            <li>Solution Architecture - Design document development for critical infrastructure systems</li>
-                            <li>Risk Management - Identifying and mitigating technical and project risks</li>
+                            <li data-translate="leadership-1">Program Management - Leading multi-million dollar SCADA modernization programs</li>
+                            <li data-translate="leadership-2">Technical Leadership - System architecture and integration expertise for critical infrastructure</li>
+                            <li data-translate="leadership-3">Cross-functional Team Management - Overseeing 15+ engineers across multiple workstreams (HMI, Custom Applications, Liquids Management Systems)</li>
+                            <li data-translate="leadership-4">Stakeholder Management - Interfacing with major pipeline company executives and decision-makers</li>
+                            <li data-translate="leadership-5">Resource Management - Team allocation, scheduling, and capacity planning</li>
+                            <li data-translate="leadership-6">Change Management - Change-order development and scope management</li>
+                            <li data-translate="leadership-7">Conflict Resolution - Technical and interpersonal dispute resolution</li>
+                            <li data-translate="leadership-8">Strategic Decision Making - Guiding technical architecture and implementation decisions</li>
+                            <li data-translate="leadership-9">Client Advisory - Providing expert consultation on complex system integration challenges</li>
+                            <li data-translate="leadership-10">Project Estimation - Scope analysis and effort estimation for enterprise systems</li>
+                            <li data-translate="leadership-11">Solution Architecture - Design document development for critical infrastructure systems</li>
+                            <li data-translate="leadership-12">Risk Management - Identifying and mitigating technical and project risks</li>
                         </ul>
                     </div>
                 </div>
@@ -170,39 +213,39 @@
                     <div class="col-md-6">
                         <div class="card mb-2">
                             <div class="card-body py-3">
-                                <h6 class="card-title mb-2">Architecture & Systems</h6>
+                                <h6 class="card-title mb-2" data-translate="skill-architecture">Architecture & Systems</h6>
                                 <div>
-                                    <span class="badge bg-dark me-1 mb-1">Distributed Systems</span>
-                                    <span class="badge bg-dark me-1 mb-1">Microservices</span>
-                                    <span class="badge bg-dark me-1 mb-1">Event-driven Architecture</span>
-                                    <span class="badge bg-dark me-1 mb-1">Real-time Processing</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-distributed-systems">Distributed Systems</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-microservices">Microservices</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-event-driven">Event-driven Architecture</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-realtime-processing">Real-time Processing</span>
                                 </div>
                             </div>
                         </div>
                         <div class="card mb-2">
                             <div class="card-body py-3">
-                                <h6 class="card-title mb-2">Programming Languages</h6>
+                                <h6 class="card-title mb-2" data-translate="skill-programming">Programming Languages</h6>
                                 <div>
-                                    <span class="badge bg-dark me-1 mb-1">C# (.NET)</span>
-                                    <span class="badge bg-dark me-1 mb-1">TypeScript</span>
-                                    <span class="badge bg-dark me-1 mb-1">Python</span>
-                                    <span class="badge bg-dark me-1 mb-1">SQL</span>
-                                    <span class="badge bg-dark me-1 mb-1">JavaScript</span>
-                                    <span class="badge bg-dark me-1 mb-1">Node.js</span>
-                                    <span class="badge bg-dark me-1 mb-1">C++</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-csharp">C# (.NET)</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-typescript">TypeScript</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-python">Python</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-sql">SQL</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-javascript">JavaScript</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-nodejs">Node.js</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-cpp">C++</span>
                                 </div>
                             </div>
                         </div>
                         <div class="card mb-2">
                             <div class="card-body py-3">
-                                <h6 class="card-title mb-2">Cloud & DevOps</h6>
+                                <h6 class="card-title mb-2" data-translate="skill-cloud">Cloud & DevOps</h6>
                                 <div>
-                                    <span class="badge bg-dark me-1 mb-1">Azure</span>
-                                    <span class="badge bg-dark me-1 mb-1">AWS</span>
-                                    <span class="badge bg-dark me-1 mb-1">Docker/Podman</span>
-                                    <span class="badge bg-dark me-1 mb-1">CI/CD Pipelines</span>
-                                    <span class="badge bg-dark me-1 mb-1">Jenkins</span>
-                                    <span class="badge bg-dark me-1 mb-1">Git</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-azure">Azure</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-aws">AWS</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-docker">Docker/Podman</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-cicd">CI/CD Pipelines</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-jenkins">Jenkins</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-git">Git</span>
                                 </div>
                             </div>
                         </div>
@@ -210,34 +253,34 @@
                     <div class="col-md-6">
                         <div class="card mb-2">
                             <div class="card-body py-3">
-                                <h6 class="card-title mb-2">AI & Productivity Tools</h6>
+                                <h6 class="card-title mb-2" data-translate="skill-ai">AI & Productivity Tools</h6>
                                 <div>
-                                    <span class="badge bg-dark me-1 mb-1">Claude Pro</span>
-                                    <span class="badge bg-dark me-1 mb-1">Local LLM (Ollama)</span>
-                                    <span class="badge bg-dark me-1 mb-1">AI-assisted Development</span>
-                                    <span class="badge bg-dark me-1 mb-1">Document Automation</span>
-                                    <span class="badge bg-dark me-1 mb-1">RAGFlow</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-claude">Claude Pro</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-llm">Local LLM (Ollama)</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-ai-dev">AI-assisted Development</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-doc-automation">Document Automation</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-ragflow">RAGFlow</span>
                                 </div>
                             </div>
                         </div>
                         <div class="card mb-2">
                             <div class="card-body py-3">
-                                <h6 class="card-title mb-2">System Integration</h6>
+                                <h6 class="card-title mb-2" data-translate="skill-integration">System Integration</h6>
                                 <div>
-                                    <span class="badge bg-dark me-1 mb-1">Enterprise APIs</span>
-                                    <span class="badge bg-dark me-1 mb-1">Industrial Protocols (OPC)</span>
-                                    <span class="badge bg-dark me-1 mb-1">Real-time Architectures</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-enterprise-apis">Enterprise APIs</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-opc">Industrial Protocols (OPC)</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-realtime-arch">Real-time Architectures</span>
                                 </div>
                             </div>
                         </div>
                         <div class="card mb-2">
                             <div class="card-body py-3">
-                                <h6 class="card-title mb-2">Data Engineering</h6>
+                                <h6 class="card-title mb-2" data-translate="skill-data">Data Engineering</h6>
                                 <div>
-                                    <span class="badge bg-dark me-1 mb-1">Multi-terabyte Databases</span>
-                                    <span class="badge bg-dark me-1 mb-1">Real-time Processing</span>
-                                    <span class="badge bg-dark me-1 mb-1">ETL Pipelines</span>
-                                    <span class="badge bg-dark me-1 mb-1">SQL Server</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-multiterabyte">Multi-terabyte Databases</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-realtime-processing">Real-time Processing</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-etl">ETL Pipelines</span>
+                                    <span class="badge bg-dark me-1 mb-1" data-translate="badge-sql-server">SQL Server</span>
                                 </div>
                             </div>
                         </div>
@@ -246,96 +289,96 @@
             </section>
 
             <section id="certifications" class="mb-5">
-                <h2>Professional Certifications</h2>
+                <h2 data-translate="certifications-heading">Professional Certifications</h2>
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Professional Engineer (P.Eng.)</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">APEGA - Association of Professional Engineers and Geoscientists of Alberta</h6>
+                        <h5 class="card-title" data-translate="cert-peng-title">Professional Engineer (P.Eng.)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted" data-translate="cert-peng-org">APEGA - Association of Professional Engineers and Geoscientists of Alberta</h6>
                         <p class="card-text">
-                            <strong>License Number:</strong> 134807<br>
-                            <strong>Date Obtained:</strong> June 29, 2022<br>
-                            <strong>Status:</strong> Active (renewed annually)<br>
-                            Licensed to practice engineering in Alberta, demonstrating technical competency, professional accountability, and adherence to engineering ethics and standards.
+                            <strong data-translate="cert-peng-license">License Number:</strong> 134807<br>
+                            <strong data-translate="cert-peng-date">Date Obtained:</strong> <span data-translate="cert-peng-date-value">June 29, 2022</span><br>
+                            <strong data-translate="cert-peng-status">Status:</strong> <span data-translate="cert-peng-active">Active (renewed annually)</span><br>
+                            <span data-translate="cert-peng-desc">Licensed to practice engineering in Alberta, demonstrating technical competency, professional accountability, and adherence to engineering ethics and standards.</span>
                         </p>
                     </div>
                 </div>
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Project Management Professional (PMP)</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Project Management Institute (PMI)</h6>
+                        <h5 class="card-title" data-translate="cert-pmp-title">Project Management Professional (PMP)</h5>
+                        <h6 class="card-subtitle mb-2 text-muted" data-translate="cert-pmp-org">Project Management Institute (PMI)</h6>
                         <p class="card-text">
-                            <strong>Credential ID:</strong> 4059154<br>
-                            <strong>Date Obtained:</strong> March 7, 2025<br>
-                            <strong>Expiration:</strong> March 6, 2028<br>
-                            Globally recognized certification validating expertise in project management methodology, leadership, and strategic business management practices.
+                            <strong data-translate="cert-pmp-id">Credential ID:</strong> 4059154<br>
+                            <strong data-translate="cert-peng-date">Date Obtained:</strong> <span data-translate="cert-pmp-date-value">March 7, 2025</span><br>
+                            <strong data-translate="cert-pmp-expiration">Expiration:</strong> <span data-translate="cert-pmp-expiration-value">March 6, 2028</span><br>
+                            <span data-translate="cert-pmp-desc">Globally recognized certification validating expertise in project management methodology, leadership, and strategic business management practices.</span>
                         </p>
                     </div>
                 </div>
             </section>
 
             <section id="experience" class="mb-5">
-                <h2>Employment History</h2>
+                <h2 data-translate="experience-heading">Employment History</h2>
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Senior Systems Engineer & Technical Team Lead</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Dexcent Inc. | Calgary, AB | November 2022 – Current</h6>
+                        <h5 class="card-title" data-translate="job1-title">Senior Systems Engineer & Technical Team Lead</h5>
+                        <h6 class="card-subtitle mb-2 text-muted" data-translate="job1-company">Dexcent Inc. | Calgary, AB | November 2022 – Current</h6>
                         <ul>
-                            <li>Program Technical Lead for enterprise software modernization, overseeing 15+ engineers across multiple development streams (UI, database, custom applications)</li>
-                            <li>Architect and implement automated deployment pipelines and change management systems using PowerShell, Git, and Azure DevOps</li>
-                            <li>Lead complex database migrations involving multi-terabyte datasets with zero-downtime requirements</li>
+                            <li data-translate="job1-bullet1">Program Technical Lead for enterprise software modernization, overseeing 15+ engineers across multiple development streams (UI, database, custom applications)</li>
+                            <li data-translate="job1-bullet2">Architect and implement automated deployment pipelines and change management systems using PowerShell, Git, and Azure DevOps</li>
+                            <li data-translate="job1-bullet3">Lead complex database migrations involving multi-terabyte datasets with zero-downtime requirements</li>
                         </ul>
                     </div>
                 </div>
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">UI and Database Developer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">TRC Solutions | Calgary, AB | September 2021 – November 2022</h6>
+                        <h5 class="card-title" data-translate="job2-title">UI and Database Developer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted" data-translate="job2-company">TRC Solutions | Calgary, AB | September 2021 – November 2022</h6>
                         <ul>
-                            <li>Led full-stack application development and database solutions for critical infrastructure systems under federal compliance requirements</li>
-                            <li>Developed quality control processes and deployment automation, contributing to fastest project completion in company history</li>
+                            <li data-translate="job2-bullet1">Led full-stack application development and database solutions for critical infrastructure systems under federal compliance requirements</li>
+                            <li data-translate="job2-bullet2">Developed quality control processes and deployment automation, contributing to fastest project completion in company history</li>
                         </ul>
                     </div>
                 </div>
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Software Engineer → Lead Engineer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">AVEVA (formerly Schneider Electric) | Calgary, AB | 2015 – 2021</h6>
+                        <h5 class="card-title" data-translate="job3-title">Software Engineer → Lead Engineer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted" data-translate="job3-company">AVEVA (formerly Schneider Electric) | Calgary, AB | 2015 – 2021</h6>
                         <ul>
-                            <li>Progressed from junior developer to technical lead over 6 years, managing enterprise system deployments for major energy companies</li>
-                            <li>Developed custom software applications and database solutions specialized in real-time data processing and statistical computing</li>
+                            <li data-translate="job3-bullet1">Progressed from junior developer to technical lead over 6 years, managing enterprise system deployments for major energy companies</li>
+                            <li data-translate="job3-bullet2">Developed custom software applications and database solutions specialized in real-time data processing and statistical computing</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section id="projects" class="mb-5">
-                <h2>Notable Projects</h2>
+                <h2 data-translate="projects-heading">Notable Projects</h2>
                  <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Colonial Enterprise Modernization (2022-Present)</h5>
-                        <p class="card-text">Program Technical Lead for comprehensive enterprise software modernization involving 15+ engineers across multiple workstreams. Responsible for technical architecture decisions, system integration strategy, and custom application development.</p>
+                        <h5 class="card-title" data-translate="project1-title">Colonial Enterprise Modernization (2022-Present)</h5>
+                        <p class="card-text" data-translate="project1-desc">Program Technical Lead for comprehensive enterprise software modernization involving 15+ engineers across multiple workstreams. Responsible for technical architecture decisions, system integration strategy, and custom application development.</p>
                     </div>
                 </div>
                  <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">TC Energy US East Pipeline (2023-2025)</h5>
-                        <p class="card-text">Initially UI developer responsible for implementing modern interface standards and automated migration tools for thousands of legacy interfaces. Promoted to Development Lead managing team of 5 developers.</p>
+                        <h5 class="card-title" data-translate="project2-title">TC Energy US East Pipeline (2023-2025)</h5>
+                        <p class="card-text" data-translate="project2-desc">Initially UI developer responsible for implementing modern interface standards and automated migration tools for thousands of legacy interfaces. Promoted to Development Lead managing team of 5 developers.</p>
                     </div>
                 </div>
             </section>
 
             <section id="education" class="mb-5">
-                <h2>Education</h2>
+                <h2 data-translate="education-heading">Education</h2>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Bachelor of Science in Computer Engineering</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">University of Alberta | Edmonton | 2010 - 2014</h6>
+                        <h5 class="card-title" data-translate="edu-degree">Bachelor of Science in Computer Engineering</h5>
+                        <h6 class="card-subtitle mb-2 text-muted" data-translate="edu-school">University of Alberta | Edmonton | 2010 - 2014</h6>
                     </div>
                 </div>
             </section>
 
             <section id="open-source" class="mb-5">
-                <h2>Open Source Projects</h2>
+                <h2 data-translate="open-source-heading">Open Source Projects</h2>
                 <ul>
                     <li><a href="https://github.com/grgomez/LSREGR" target="_blank">LSREGR - SQL Server Linear Regression Library</a></li>
                     <li><a href="https://github.com/grgomez/play-beats-bot" target="_blank">Play Beats Bot - Discord Music Bot</a></li>
@@ -355,26 +398,8 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Back to top button functionality
-        const backToTopButton = document.getElementById('backToTop');
-        
-        // Show/hide button based on scroll position
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-        
-        // Smooth scroll to top when button is clicked
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+    <script src="./js/language-switcher.js"></script>
+    <script src="./js/back-to-top.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
