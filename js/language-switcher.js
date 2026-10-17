@@ -44,7 +44,7 @@ class LanguageSwitcher {
     updateMetaTags(lang) {
         const titles = {
             en: 'Germán Gómez Urbina, P.Eng., PMP - Systems Architect',
-            fr: 'Germán Gómez Urbina, P.Eng., PMP - Architecte de systèmes',
+            fr: 'Germán Gómez Urbina, P.Eng., PMP - Architecte de Systèmes',
             es: 'Germán Gómez Urbina, P.Eng., PMP - Arquitecto de Sistemas'
         };
         
