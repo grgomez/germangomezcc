@@ -43,15 +43,15 @@ class LanguageSwitcher {
 
     updateMetaTags(lang) {
         const titles = {
-            en: 'Germán Gómez Urbina, P.Eng., PMP - Systems Integration Engineer',
-            fr: 'Germán Gómez Urbina, P.Eng., PMP - Ingénieur d\'Intégration de Systèmes',
-            es: 'Germán Gómez Urbina, P.Eng., PMP - Ingeniero de Integración de Sistemas'
+            en: 'Germán Gómez Urbina, P.Eng., PMP - Systems Architect',
+            fr: 'Germán Gómez Urbina, P.Eng., PMP - Architecte de Systèmes',
+            es: 'Germán Gómez Urbina, P.Eng., PMP - Arquitecto de Sistemas'
         };
         
         const descriptions = {
-            en: 'Systems Integration Engineer with 9+ years developing enterprise-scale distributed systems for critical infrastructure. Professional Engineer (P.Eng.) and PMP certified, specializing in C#, Python, and DevOps practices in Calgary, Alberta.',
-            fr: 'Ingénieur d\'intégration de systèmes avec 9+ années d\'expérience développant des systèmes distribués à l\'échelle d\'entreprise pour l\'infrastructure critique. Ingénieur professionnel (P.Eng.) et certifié PMP, spécialisé en C#, Python et pratiques DevOps à Calgary, Alberta.',
-            es: 'Ingeniero de Integración de Sistemas con más de 9 años desarrollando sistemas distribuidos a escala empresarial para infraestructura crítica. Ingeniero Profesional (P.Eng.) y certificado PMP, especializado en C#, Python y prácticas DevOps en Calgary, Alberta.'
+            en: 'Systems Architect with 10+ years designing enterprise-scale distributed systems for critical infrastructure. Professional Engineer (P.Eng.) and PMP certified, specializing in C#, Python, DevOps and AI-assisted engineering in Calgary, Alberta.',
+            fr: 'Architecte de Systèmes avec plus de 10 ans d\'expérience en conception de systèmes distribués à l\'échelle d\'entreprise pour l\'infrastructure critique. Ingénieur professionnel (P.Eng.) et certifié PMP, spécialisé en C#, Python, DevOps et ingénierie assistée par IA à Calgary, Alberta.',
+            es: 'Arquitecto de Sistemas con más de 10 años diseñando sistemas distribuidos a escala empresarial para infraestructura crítica. Ingeniero Profesional (P.Eng.) y certificado PMP, especializado en C#, Python, DevOps e ingeniería asistida por IA en Calgary, Alberta.'
         };
 
         document.title = titles[lang];
